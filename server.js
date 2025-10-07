@@ -1,5 +1,5 @@
 // =================================================================
-// JC NEXUS HUB - Main Server File (Updated & Complete)
+// Office NEXUS HUB - Main Server File (Updated & Complete)
 // =================================================================
 require('dotenv').config();
 const express = require('express');
@@ -164,7 +164,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname, { extensions: ['html'] }));
 
 const sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET || 'a_very_secret_key_for_jc_nexus_hub',
+  secret: process.env.SESSION_SECRET || 'a_very_secret_key_for_Office_nexus_hub',
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: MONGO_URI }),
@@ -760,6 +760,7 @@ io.on('connection', (socket)=>{
 // =================================================================
 /* Start */
 // =================================================================
-server.listen(PORT, ()=> console.log(`JC Nexus Hub server running on http://localhost:${PORT}`));
+server.listen(PORT, ()=> console.log(`Office Nexus Hub server running on http://localhost:${PORT}`));
 
-// =============== END OF JC NEXUS HUB SERVER FILE ===============
+
+// =============== END OF Office NEXUS HUB SERVER FILE ===============
