@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JC NEXUS HUB - Admin Dashboard</title>
+    <title>Office NEXUS HUB - Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,8 +46,8 @@
             class="bg-white text-slate-700 flex flex-col transition-all duration-300 ease-in-out shadow-lg print:hidden">
             
             <div class="flex items-center h-20 px-6 border-b border-slate-200 logo-container transition-all duration-300">
-                <img src="/logo.png" alt="JC NEXUS Hub Logo" class="h-10 w-auto flex-shrink-0 rounded-full">
-                <span class="ml-4 text-xl font-bold logo-text whitespace-nowrap">JC NEXUS HUB</span>
+                <img src="/logo.png" alt="Office NEXUS Hub Logo" class="h-10 w-auto flex-shrink-0 rounded-full">
+                <span class="ml-4 text-xl font-bold logo-text whitespace-nowrap">Office NEXUS HUB</span>
             </div>
 
             <nav class="flex-1 px-5 py-8 space-y-1 overflow-y-auto">
@@ -299,7 +299,7 @@
             <div @click.away="closeBillModal()" class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4" x-show="isBillModalOpen" x-transition.scale>
                 <div class="printable-bill">
                     <div class="p-8" x-show="billToView">
-                        <div class="text-center mb-6"><img src="/logo.png" alt="JC NEXUS Hub Logo" class="h-16 w-auto mx-auto"><h2 class="text-2xl font-bold mt-2">JC NEXUS HUB - Canteen</h2><p class="text-sm text-slate-500">Tax Invoice</p></div>
+                        <div class="text-center mb-6"><img src="/logo.png" alt="Office NEXUS Hub Logo" class="h-16 w-auto mx-auto"><h2 class="text-2xl font-bold mt-2">Office NEXUS HUB - Canteen</h2><p class="text-sm text-slate-500">Tax Invoice</p></div>
                         <div class="flex justify-between border-b pb-4 mb-4 text-sm"><div><p class="font-bold">Billed To:</p><p x-text="billToView.requesterName"></p><p x-text="'ID: ' + billToView.employeeId"></p></div><div class="text-right"><p><span class="font-bold">Bill No:</span> <span x-text="billToView._id.slice(-6).toUpperCase()"></span></p><p><span class="font-bold">Date:</span> <span x-text="formatDate(billToView.completedAt || billToView.createdAt, true)"></span></p><p><span class="font-bold">Paid Via:</span> <span x-text="billToView.paymentMethod"></span></p></div></div>
                         <table class="w-full text-left text-sm mb-4"><thead><tr class="bg-slate-100"><th class="py-2 px-4">Item</th><th class="py-2 px-4 text-center">Qty</th><th class="py-2 px-4 text-right">Price</th><th class="py-2 px-4 text-right">Total</th></tr></thead><tbody><template x-for="item in billToView.items"><tr class="border-b"><td class="py-2 px-4" x-text="item.name"></td><td class="py-2 px-4 text-center" x-text="item.quantity"></td><td class="py-2 px-4 text-right" x-text="formatCurrency(item.price)"></td><td class="py-2 px-4 text-right" x-text="formatCurrency(item.price * item.quantity)"></td></tr></template></tbody></table>
                         <div class="pt-4 flex justify-end"><div class="w-1/2"><div class="flex justify-between text-lg font-bold"><span>Grand Total:</span><span x-text="formatCurrency(billToView.totalPrice)"></span></div></div></div>
@@ -501,4 +501,5 @@
     }
     </script>
 </body>
+
 </html>
